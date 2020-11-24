@@ -165,7 +165,7 @@
 	}
 }
 
-.slick-arrow {
+.slick-arrow:not(.slider-arrow) {
 	background: #fff;
 	width: 36px;
 	height: 36px;
@@ -393,12 +393,12 @@ a.rubric {
 		background: red;
 		width: 4px;
 		height: 4px;
-		margin-top: 4px;
 		content: '';
 		display: block;
 		position: absolute;
+		top: 3px;
 		left: 0;
-		box-shadow: 0 0 10px red;
+		box-shadow: 0 0 8px rgba(red, .5);
 		border-radius: 50%;
 	}
 }
@@ -1550,6 +1550,10 @@ a.rubric {
 	&__info {
 		z-index: 2;
 	}
+	&__time {
+		display: block;
+		color: rgba($dark--100, .5);
+	}
 }
 
 .author {
@@ -1665,6 +1669,29 @@ a.rubric {
 	font-family: $fonts-accent;
 	&__arrow {
 		margin-left: .4em;
+	}
+}
+
+.error-block {
+	padding: 100px 0;
+	text-align: center;
+	&__title {
+		margin: 0 0 24px;
+		font-weight: bold;
+		font-size: 144px;
+		font-family: $fonts-accent;
+		line-height: 1;
+	}
+	&__text {
+		max-width: 440px;
+		margin: 0 auto 54px;
+		a {
+			color: $blue--100;
+			@extend .link-hover;
+		}
+	}
+	&__btn {
+		min-width: 310px;
 	}
 }
 
@@ -2355,7 +2382,7 @@ a.rubric {
 		margin: 0 0 40px;
 	}
 	&__article {
-		margin: 10px 0;
+		margin: 10px 0 20px;
 		&--pb_medium + &--pb_medium {
 			margin-top: 18px;
 		}
@@ -2367,14 +2394,14 @@ a.rubric {
 		margin: 20px 0;
 	}
 	&__vote {
-		margin: 10px 0;
+		margin: 10px 0 20px;
 	}
 	&__title {
 		margin-bottom: 10px;
 	}
 	&__subscribe-instagram {
 		min-height: calc(100% - 20px);
-		margin: 10px 0;
+		margin: 10px 0 20px;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -2399,8 +2426,9 @@ a.rubric {
 		margin-bottom: 10px;
 	}
 	&__btn-footer {
-		min-width: 540px;
 		margin: 40px auto 20px;
+		padding-right: 60px;
+		padding-left: 60px;
 		display: table;
 		font-size: 19px;
 	}
@@ -2431,6 +2459,7 @@ a.rubric {
 	&__header {
 		margin: 0 0 10px;
 		padding-bottom: 109.26%;
+		display: block;
 		position: relative;
 	}
 	&__img {

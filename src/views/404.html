@@ -1,0 +1,26 @@
+			@@include('../blocks/modules/head/head.html', {
+				"title": "404 | Мирнинский рабочий" 
+			})
+
+			<div id="site">
+				@@include('../blocks/modules/header/header.html')
+
+				<!-- section BEGIN -->
+				<section class="section section--theme_light">
+					<div class="container section__container">
+						<div class="error-block">
+							<div class="error-block__title">404</div>
+							<div class="error-block__text">Возможно, неправильная ссылка. Попробуйте найти статью по названию или <a href="#">сообщите нам об ошибке</a></div>
+							<a href="/" class="btn btn--theme_gray btn--size_medium error-block__btn">Вернуться на главную</a>
+						</div>
+					</div>
+				</section>
+				<!-- section END -->
+
+				@@include('../blocks/modules/footer/footer.html')
+			</div>
+
+			<script src="js/main.js"></script>
+			<script src="js/vendor.js"></script>
+	</body>
+</html>
