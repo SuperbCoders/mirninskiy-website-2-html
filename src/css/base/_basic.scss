@@ -10,7 +10,7 @@ body {
 	font-weight: normal;
 	line-height: 1.25;
 	font-family: $fonts-main;
-	color: #0C1427;
+	color: $dark--100;
 }
 
 body.is-hidden {
@@ -48,5 +48,5 @@ picture {
 }
 
 ::placeholder {
-	color: rgba(#0C1427, .7);
+	color: rgba($dark--100, .7);
 }

@@ -59,12 +59,12 @@
 		color: inherit;
 		transition: all .2s;
 		&:hover {
-			color: #52A7F5;
+			color: $blue--100;
 			text-decoration: none;
 		}
 	}
 	&__item:hover &__link {
-		color: #52A7F5;
+		color: $blue--100;
 		text-decoration: none;
 	}
 	&__arrow {
@@ -163,7 +163,7 @@
 		transition: all .4s;
 		outline: none;
 		&:hover {
-			color: #52A7F5;
+			color: $blue--100;
 		}
 		&:before {
 			content: '';
@@ -183,7 +183,7 @@
 			box-shadow: 0 -6px 0 currentColor, 0 6px 0 currentColor;
 		}
 		&.is-active {
-			color: #52A7F5;
+			color: $blue--100;
 		}
 	}
 	&__nav-list {
@@ -192,7 +192,7 @@
 	&__search-toggle {
 		background: transparent;
 		font-size: 0;
-		color: #0C1427;
+		color: $dark--100;
 		text-align: center;
 		border: none;
 		transition: all .4s;
@@ -200,7 +200,7 @@
 		cursor: pointer;
 		position: relative;
 		&:hover {
-			color: #52A7F5;
+			color: $blue--100;
 		}
 		svg {
 			width: 14px;
@@ -243,7 +243,7 @@
 			visibility: hidden;
 		}
 		&:before {
-			background: rgba(12,20,39,.7);
+			background: rgba($dark--100,.7);
 			content: '';
 			position: fixed;
 			top: 0;
@@ -290,7 +290,7 @@
 	&__link {
 		transition: all .4s;
 		&:hover {
-			color: #52A7F5;
+			color: $blue--100;
 			text-decoration: none;
 		}
 	}
@@ -299,7 +299,7 @@
 .header-menu-title-link {
 	@extend .link-hover;
 	&:hover {
-		color: #52A7F5;
+		color: $blue--100;
 		text-decoration: none;
 	}
 }
@@ -315,7 +315,7 @@
 	&__link {
 		transition: all .4s;
 		&:hover {
-			color: #52A7F5;
+			color: $blue--100;
 			text-decoration: none;
 		}
 	}

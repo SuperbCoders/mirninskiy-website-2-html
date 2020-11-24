@@ -219,15 +219,38 @@ $(document).ready(function () {
       $('body').removeClass('is-hidden');
     }, 400);
     $('.header__search').removeClass('is-show');
+  }); // file modal
+
+  $('.js-form-file input').on('change', function () {
+    var splittedFakePath = this.value.split('\\');
+    $('.el-files__text').text(splittedFakePath[splittedFakePath.length - 1]);
   }); // slider init
 
-  $('.js-slider-news-init').slick({
-    infinite: true,
-    slidesToShow: 5,
-    slidesToScroll: 1,
-    prevArrow: $('.js-slider-news-arrows-apend .slider-arrow--prev'),
-    nextArrow: $('.js-slider-news-arrows-apend .slider-arrow--next')
-  }); // show/hide password
+  if ($('.js-slider-news-init').length) {
+    $('.js-slider-news-init').slick({
+      infinite: true,
+      slidesToShow: 5,
+      slidesToScroll: 1,
+      prevArrow: $('.js-slider-news-arrows-apend .slider-arrow--prev'),
+      nextArrow: $('.js-slider-news-arrows-apend .slider-arrow--next')
+    });
+  } // article slider init
+
+
+  if ($('.js-article-slider-init').length) {
+    var $slickElement = $('.js-article-slider-init');
+    var $status = $slickElement.siblings('.js-article-pagination');
+    $slickElement.on('init reInit afterChange', function (event, slick, currentSlide, nextSlide) {
+      var i = (currentSlide ? currentSlide : 0) + 1;
+      $status.text(i + ' из ' + slick.slideCount);
+    });
+    $slickElement.slick({
+      infinite: true,
+      slidesToShow: 1,
+      slidesToScroll: 1
+    });
+  } // show/hide password
+
 
   $('.js-login-switch-password').click(function () {
     $(this).toggleClass('is-active');
