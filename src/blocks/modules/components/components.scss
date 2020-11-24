@@ -1326,11 +1326,12 @@ a.rubric {
 		}
 	}
 	blockquote ~ figcaption{
-		margin: 0 0 40px;
-		padding: 0 0 0 250px;
-		display: block;
-		font-weight: bold;
-		font-size: 16px;
+		margin: 0 0 40px !important;
+		padding: 0 0 0 250px !important;
+		display: block !important;
+		font-weight: bold !important;
+		font-size: 16px !important;
+		color: $dark--100 !important;
 	}
 	&__percent {
 		max-width: 400px;
