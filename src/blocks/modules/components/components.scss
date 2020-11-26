@@ -108,6 +108,13 @@ body.is-hidden-sm {
 	}
 }
 
+[data-size-md="33"] {
+	@media (max-width: 1199px) {
+		max-width: 33.33%;
+		flex-basis: 33.33%;
+	}
+}
+
 [data-size-md="4"] {
 	@media (max-width: 1199px) {
 		max-width: 100%;
@@ -449,9 +456,16 @@ a.rubric {
 	&__title {
 		margin: 0 0 24px;
 		font-size: 24px;
+		@media (max-width: 979px) {
+			margin-bottom: 16px;
+			font-size: 21px;
+		}
 	}
 	&__paragraph {
 		margin: 0 0 24px;
+		@media (max-width: 979px) {
+			margin-bottom: 16px;
+		}
 	}
 	&__description {
 		margin: 0 0 24px;
@@ -463,11 +477,24 @@ a.rubric {
 .login-form {
 	&__header {
 		margin: -24px 0 50px;
+		@media (max-width: 1199px) {
+			margin-top: 0;
+		}
+		@media (max-width: 979px) {
+			margin-bottom: 34px;
+			padding-top: 30px;
+		}
 	}
 	&__title {
 		font-weight: normal;
 		font-size: 32px;
 		font-family: $fonts-accent;
+		@media (max-width: 979px) {
+			margin-right: auto;
+			margin-left: auto;
+			display: table;
+			font-size: 28px;
+		}
 		a {
 			color: $blue--100;
 			box-shadow: 0 1px 0 $blue--100;
@@ -487,6 +514,9 @@ a.rubric {
 	&__reset {
 		margin: -5px 0 20px;
 		text-align: right;
+		@media (max-width: 979px) {
+			text-align: center;
+		}
 	}
 	&__link {
 		color: $blue--100;
@@ -664,6 +694,9 @@ a.rubric {
 	padding: 50px;
 	text-align: left;
 	position: relative;
+	@media (max-width: 979px) {
+		padding: 20px;
+	}
 	.close-modal:last-child {
 		display: none !important;
 	}
@@ -671,6 +704,10 @@ a.rubric {
 		width: 100%;
 		max-width: 1220px;
 		margin: 20px auto;
+		@media (max-width: 1199px) {
+			margin-top: 0;
+			margin-bottom: 0;
+		}
 	}
 	&--size_full {
 		width: 100%;
@@ -680,6 +717,9 @@ a.rubric {
 	&--size_fixed {
 		width: 520px;
 		min-height: 100vh;
+		@media (max-width: 979px) {
+			width: 100%;
+		}
 	}
 	&--position_right {
 		top: 0;
@@ -693,6 +733,10 @@ a.rubric {
 		top: 20px;
 		right: 20px;
 		z-index: 1;
+		@media (max-width: 979px) {
+			width: calc(100% + 40px);
+			margin: -20px -20px 0;
+		}
 	}
 	&__picture {
 		background: #F6F6F6;
@@ -706,6 +750,9 @@ a.rubric {
 		top: 0;
 		left: 0;
 		pointer-events: none;
+		@media (max-width: 1199px) {
+			display: none;
+		}
 	}
 	&__img {
 		width: 100%;
@@ -720,15 +767,33 @@ a.rubric {
 		display: flex;
 		justify-content: space-between;
 		flex-wrap: wrap;
+		@media (max-width: 979px) {
+			max-width: 100%;
+			padding: 30px 0;
+		}
 	}
 	&__content {
 		max-width: 278px;
 		padding-top: 180px;
 		flex: 0 0 278px;
+		@media (max-width: 1199px) {
+			padding-top: 0;
+		}
+		@media (max-width: 979px) {
+			background: $gray--100;
+			max-width: calc(100% + 40px);
+			margin: -30px -20px 0;
+			padding: 30px 20px 0;
+			flex-basis: calc(100% + 40px);
+		}
 	}
 	&__form {
 		max-width: 350px;
 		flex: 0 0 350px;
+		@media (max-width: 979px) {
+			max-width: 100%;
+			flex-basis: 100%;
+		}
 	}
 }
 
@@ -822,6 +887,9 @@ a.rubric {
 		border: 2px solid rgba($dark--100,.12);
 		border-radius: 4px;
 		transition: all .3s;
+		@media (max-width: 660px) {
+			padding: 10px;
+		}
 	}
 	&:hover &__inner,
 	&__input:checked ~ &__inner {
@@ -837,6 +905,9 @@ a.rubric {
 		border-radius: 50%;
 		box-shadow: inset 0 1px 1px rgba(0,0,0,.25);
 		transition: all .18s;
+		@media (max-width: 660px) {
+			margin-bottom: 8px;
+		}
 	}
 	&__input:checked ~ &__inner &__icon {
 		border-color: $blue--100;
@@ -847,6 +918,9 @@ a.rubric {
 		margin: 0 0 10px;
 		display: block;
 		color: rgba($dark--100,.6);
+		@media (max-width: 660px) {
+			margin-bottom: 8px;
+		}
 	}
 	&__price {
 		display: block;
@@ -1109,23 +1183,45 @@ a.rubric {
 }
 
 .m-modal-subscribe {
+	margin: 0 -5px 10px;
 	padding: 30px 25px;
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
+	@media (max-width: 1199px) {
+		margin-right: 0;
+		margin-left: 0;
+		padding-right: 0;
+		padding-left: 0;
+	}
 	&__content {
 		max-width: 44.5%;
 		flex: 0 0 44.5%;
+		@media (max-width: 1199px) {
+			max-width: 50%;
+			flex-basis: 50%;
+		}
+		@media (max-width: 979px) {
+			max-width: 100%;
+			flex-basis: 100%;
+		}
 	}
 	&__step {
 		margin: 0 0 10px;
 		padding-top: 8px;
+		@media (max-width: 979px) {
+			margin-bottom: 2px;
+			padding-top: 0;
+		}
 	}
 	&__title {
 		margin: 0 0 20px;
 		font-weight: normal;
 		font-size: 30px;
 		font-family: $fonts-accent;
+		@media (max-width: 979px) {
+			font-size: 28px;
+		}
 	}
 	&__description {
 		margin: 0 0 20px;
@@ -1162,9 +1258,12 @@ a.rubric {
 		margin: 0 0 10px;
 		font-weight: bold;
 	}
-		margin: 0 -5px 10px;
 	&__group {
+		margin: 0 -5px;
 		display: flex;
+		@media (max-width: 660px) {
+			flex-wrap: wrap;
+		}
 	}
 	&__el {
 		max-width: 33.33%;
@@ -1172,6 +1271,10 @@ a.rubric {
 		margin-bottom: 10px;
 		padding: 0 5px;
 		flex: 0 0 33.33%;
+		@media (max-width: 660px) {
+			max-width: 100%;
+			flex-basis: 100%;
+		}
 	}
 	&__picture {
 		max-width: 57.9%;
@@ -1179,6 +1282,14 @@ a.rubric {
 		flex: 0 0 57.9%;
 		font-size: 0;
 		align-self: flex-end;
+		@media (max-width: 1199px) {
+			max-width: 50%;
+			margin: 0 -20px -60px 0;
+			flex-basis: 50%;
+		}
+		@media (max-width: 979px) {
+			display: none;
+		}
 	}
 	&__img {
 		width: 100%;
@@ -1195,15 +1306,23 @@ a.rubric {
 	&__btn {
 		min-width: 260px;
 		margin-top: 5px;
+		@media (max-width: 660px) {
+			width: 100%;
+		}
 	}
 	&__input-description {
 		margin: -5px 0 13px;
 		padding: 0 17px;
+		font-size: 13px;
+		color: rgba($dark--100, .6);
 	}
 }
 
 .m-modal-announcement {
 	padding: 70px 50px 0 0;
+	@media (max-width: 979px) {
+		padding: 20px 0 0;
+	}
 	&__title {
 		margin: 0 0 20px;
 		font-weight: bold;
@@ -1250,6 +1369,11 @@ a.rubric {
 		height: 106px;
 		display: block;
 		margin: 0 auto 30px;
+		@media (max-width: 979px) {
+			width: 90px;
+			height: 90px;
+			margin-bottom: 15px;
+		}
 	}
 	&__title {
 		max-width: 250px;
@@ -1257,6 +1381,9 @@ a.rubric {
 		font-weight: normal;
 		font-size: 30px;
 		font-family: $fonts-accent;
+		@media (max-width: 979px) {
+			font-size: 28px;
+		}
 	}
 	&__text {
 		max-width: 344px;
@@ -1785,6 +1912,9 @@ a.rubric {
 	&__text {
 		max-width: 440px;
 		margin: 0 auto 54px;
+		@media (max-width: 979px) {
+			margin-bottom: 30px;
+		}
 		a {
 			color: $blue--100;
 			@extend .link-hover;
@@ -1792,6 +1922,9 @@ a.rubric {
 	}
 	&__btn {
 		min-width: 310px;
+		@media (max-width: 979px) {
+			min-width: 0;
+		}
 	}
 }
 
@@ -1888,12 +2021,16 @@ a.rubric {
 		visibility: hidden;
 	}
 	&:hover &__icon {
-		background: $blue--100;
-		border-color: $blue--100;
+		@media (min-width: 1200px) {
+			background: $blue--100;
+			border-color: $blue--100;
+		}
 	}
 	&:hover &__icon:before {
-		opacity: 1;
-		visibility: visible;
+		@media (min-width: 1200px) {
+			opacity: 1;
+			visibility: visible;
+		}
 	}
 }
 
@@ -2339,6 +2476,9 @@ a.rubric {
 	font-weight: bold;
 	font-size: 42px;
 	font-family: $fonts-accent;
+	@media (max-width: 979px) {
+		font-size: 40px;
+	}
 	&--ta_left{
 		text-align: left;
 	}
@@ -2850,17 +2990,29 @@ a.rubric {
 	&__picture {
 		margin: 0 0 40px;
 		font-size: 0;
+		@media (max-width: 660px) {
+			margin: 0 -20px 20px;
+		}
 	}
 	&__img {
 		width: 100%;
+		max-width: 706px;
 		display: block;
 		transition: all .4s;
 		&:not(:hover) {
 			filter: grayscale(100%);
 		}
+		@media (max-width: 1199px) {
+			max-width: 706px;
+			margin: 0 auto;
+		}
 	}
 	&__content {
 		margin: 0 0 40px;
+		@media (max-width: 1199px) {
+			max-width: 706px;
+			margin: 0 auto 30px;
+		}
 	}
 	&__title {
 		margin: 0 0 8px;
@@ -2879,31 +3031,49 @@ a.rubric {
 .about-item {
 	text-align: center;
 	&__picture {
-		width: 100%;
-		max-width: 216px;
+		width: 216px;
+		height: 216px;
 		margin: 0 auto 20px;
-		padding-bottom: 100%;
 		display: block;
 		border-radius: 50%;
 		position: relative;
 		overflow: hidden;
+		@media (max-width: 660px) {
+			width: 130px;
+			height: 130px;
+			margin-bottom: 10px;
+		}
 	}
 	&__avatar {
 		@extend .el-cover;
 	}
 	&__name {
-		margin: 0 0 9px;
+		margin: 0 0 10px;
 		font-size: 24px;
 		font-family: $fonts-accent;
+		@media (max-width: 660px) {
+			font-size: 21px;
+		}
 	}
 	&__position {
 		margin: 0 0 40px;
+		@media (max-width: 660px) {
+			margin-bottom: 20px;
+		}
 	}
 }
 
 .archive-library {
 	background: #F6F6F6;
 	padding: 35px;
+	@media (max-width: 1199px) {
+		margin: 0 -30px;
+		padding: 20px 30px;
+	}
+	@media (max-width: 979px) {
+		padding: 20px;
+		margin: 0 -20px;
+	}
 	&__nav-panel {
 		margin: 0 auto 30px;
 	}
@@ -2912,6 +3082,9 @@ a.rubric {
 		font-weight: normal;
 		font-size: 32px;
 		font-family: $fonts-accent;
+		@media (max-width: 979px) {
+			font-size: 24px;
+		}
 	}
 	&__row {
 	}
@@ -2935,7 +3108,7 @@ a.rubric {
 }
 
 .about-contacts {
-	padding: 64px 0;
+	padding: 64px 0 34px;
 	&__heading {
 		margin: 0 0 40px;
 	}
@@ -2944,8 +3117,12 @@ a.rubric {
 		font-weight: normal;
 		font-size: 28px;
 		font-family: $fonts-accent;
+		@media (max-width: 979px) {
+			font-size: 24px;
+		}
 	}
 	&__content {
+		margin-bottom: 30px;
 	}
 	&__line {
 		margin: 0 0 12px;
@@ -2955,6 +3132,7 @@ a.rubric {
 		font-size: 20px;
 	}
 	&__description {
+		margin-top: 4px;
 		font-size: 14px;
 		color: rgba($dark--100,.5);
 		a {

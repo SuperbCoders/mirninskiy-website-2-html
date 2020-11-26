@@ -15,7 +15,8 @@
 		margin-right: 10px;
 		flex-shrink: 0;
 		@media (max-width: 660px) {
-			width: 24px;
+			width: auto;
+			height: 34px;
 			margin-right: 0;
 		}
 	}
@@ -33,7 +34,7 @@
 	display: flex;
 	justify-content: flex-end;
 	flex-wrap: wrap;
-	@media (max-width: 979px) {
+	@media (max-width: 1199px) {
 		display: none;
 	}
 	&__col {
@@ -277,10 +278,11 @@
 		&:before {
 			content: '';
 			position: absolute;
-			top: -10px;
-			right: -20px;
-			bottom: -10px;
-			left: -20px;
+			top: 0;
+			right: -10px;
+			bottom: 0;
+			left: -10px;
+
 		}
 		&:after {
 			background: currentColor;
