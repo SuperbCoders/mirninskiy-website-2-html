@@ -33,13 +33,13 @@
 	<div class="header__main">
 		<div class="container">
 			<div class="row header__topline">
-				<div class="row__col header__topline-logo" data-size="2">
+				<div class="row__col header__topline-logo" data-size-md="2" data-size="2">
 					<a href="/" class="header-logo" title="На главную">
 						<img src="images/logo-icon.svg" alt="logo icon" class="header-logo__icon">
 						<img src="images/logo-title.svg" alt="logo title" class="header-logo__title">
 					</a>
 				</div>
-				<div class="row__col header__topline-info" data-size="3">
+				<div class="row__col header__topline-info" data-size-md="2" data-size="3">
 					<div class="header-info">
 						<div class="header-info__col">
 							<div class="info-item header-info__line">Сегодня <span class="info-item__count">+6°</span></div>
@@ -58,12 +58,18 @@
 			<div class="container header__nav-container">
 				<button class="js-toggle-menu header__toggle-nav"></button>
 				<nav class="header-nav header__nav-list">
+					<button class="js-toggle-nav-mobile header-nav__btn">Меню <svg viewBox="0 0 10 6" class="header-nav__arrow"><use xlink:href="images/sprites/sprite.svg#arrow"/></svg></button>
 					<ul class="header-nav__list">
+						<a class="js-header-nav-mobile-close close-modal header-nav__close">
+							<svg viewBox="0 0 24 24" class="close-modal__icon">
+								<use xlink:href="images/sprites/sprite.svg#close"/>
+							</svg>
+						</a>
 						<li class="header-nav__item">
 							<a href="#" class="header-nav__link">Новости</a>
 						</li>
 						<li class="header-nav__item">
-							<a href="#" class="header-nav__link">Актуальные темы </a>
+							<a href="#" class="header-nav__link">Актуальные темы</a>
 						</li>
 						<li class="header-nav__item">
 							<a href="#" class="header-nav__link">Полезное <svg viewBox="0 0 12 6" class="header-nav__arrow"><use xlink:href="images/sprites/sprite.svg#arrow"/></svg></a>
@@ -143,6 +149,11 @@
 	<!-- header-menu BEGIN -->
 	<div class="header-menu header__menu">
 		<div class="header-menu__inner">
+			<a class="js-header-menu-mobile-close close-modal header-menu__close">
+				<svg viewBox="0 0 24 24" class="close-modal__icon">
+					<use xlink:href="images/sprites/sprite.svg#close"/>
+				</svg>
+			</a>
 			<div class="container">
 				<div class="header-menu__row">
 					<div class="header-menu__col">
@@ -973,7 +984,7 @@
 <footer class="footer">
 	<div class="container footer__container">
 		<div class="row">
-			<div class="row__col" data-size="1">
+			<div class="row__col" data-size-esm="4" data-size-sm="2" data-size-md="1" data-size="1">
 				<div class="footer__title">Актуальные темы</div>
 				<ul class="footer-nav footer__nav">
 					<li class="footer-nav__item">
@@ -993,7 +1004,7 @@
 					</li>
 				</ul>
 			</div>
-			<div class="row__col" data-size="1">
+			<div class="row__col" data-size-esm="4" data-size-sm="2" data-size-md="1" data-size="1">
 				<div class="footer__title">Полезное</div>
 				<ul class="footer-nav footer__nav">
 					<li class="footer-nav__item">
@@ -1013,7 +1024,7 @@
 					</li>
 				</ul>
 			</div>
-			<div class="row__col" data-size="1">
+			<div class="row__col" data-size-esm="4" data-size-sm="2" data-size-md="1" data-size="1">
 				<div class="footer__title">Это интересно</div>
 				<ul class="footer-nav footer__nav">
 					<li class="footer-nav__item">
@@ -1030,7 +1041,7 @@
 					</li>
 				</ul>
 			</div>
-			<div class="row__col" data-size="1">
+			<div class="row__col" data-size-esm="4" data-size-sm="2" data-size-md="1" data-size="1">
 				<div class="footer__title">О газете</div>
 				<ul class="footer-nav footer__nav">
 					<li class="footer-nav__item">
@@ -1050,33 +1061,35 @@
 					</li>
 				</ul>
 			</div>
-			<div class="row__col" data-size="1">
-				<a href="#" class="btn btn--theme_white footer__subscribe">Подписаться</a>
-				<div class="social social--theme_white footer__social">
-					<div class="social__title">Мы в социальных сетях</div>
-					<ul class="social__list">
-						<li class="social__list-item">
-							<a href="#" class="social__list-link">
-								<svg viewBox="0 0 20 20" class="social__list-icon">
-									<use xlink:href="images/sprites/sprite.svg#instagram"/>
-								</svg>
-							</a>
-						</li>
-						<li class="social__list-item">
-							<a href="#" class="social__list-link">
-								<svg viewBox="0 0 20 20" class="social__list-icon">
-									<use xlink:href="images/sprites/sprite.svg#google"/>
-								</svg>
-							</a>
-						</li>
-						<li class="social__list-item">
-							<a href="#" class="social__list-link">
-								<svg viewBox="0 0 20 20" class="social__list-icon">
-									<use xlink:href="images/sprites/sprite.svg#facebook"/>
-								</svg>
-							</a>
-						</li>
-					</ul>
+			<div class="row__col" data-size-md="4" data-size-md="4" data-size="1">
+				<div class="footer__social">
+					<a href="#" class="btn btn--theme_white footer__subscribe">Подписаться</a>
+					<div class="social social--theme_white footer__social-list">
+						<div class="social__title">Мы в социальных сетях</div>
+						<ul class="social__list">
+							<li class="social__list-item">
+								<a href="#" class="social__list-link">
+									<svg viewBox="0 0 20 20" class="social__list-icon">
+										<use xlink:href="images/sprites/sprite.svg#instagram"/>
+									</svg>
+								</a>
+							</li>
+							<li class="social__list-item">
+								<a href="#" class="social__list-link">
+									<svg viewBox="0 0 20 20" class="social__list-icon">
+										<use xlink:href="images/sprites/sprite.svg#google"/>
+									</svg>
+								</a>
+							</li>
+							<li class="social__list-item">
+								<a href="#" class="social__list-link">
+									<svg viewBox="0 0 20 20" class="social__list-icon">
+										<use xlink:href="images/sprites/sprite.svg#facebook"/>
+									</svg>
+								</a>
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -1085,10 +1098,10 @@
 				<div class="row__col" data-size="5">
 					<div class="footer__copyright-date">© 1960–2020</div>
 				</div>
-				<div class="row__col" data-size="3">
+				<div class="row__col" data-size-sm="4" data-size="3">
 					<div class="footer__copyright-description">Министерство инноваций, цифрового развития и инфокоммуникационных технологий РС(Я) ГАУ РС(Я) Редакция газеты «Мирнинский рабочий»</div>
 				</div>
-				<div class="row__col" data-size="2">
+				<div class="row__col" data-size-sm="4" data-size="2">
 					<div class="footer-register footer__copyright-wrapper">
 						<div class="footer-register__text">Рег. номер: серия <strong>ПИ NoТУ14-00510</strong> от 24.04.2018<br><a href="#">Правила цитирования</a></div>
 						<img src="images/logo-icon.svg" alt="logo icon" class="footer-register__logo">

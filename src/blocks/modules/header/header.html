@@ -3,13 +3,13 @@
 	<div class="header__main">
 		<div class="container">
 			<div class="row header__topline">
-				<div class="row__col header__topline-logo" data-size="2">
+				<div class="row__col header__topline-logo" data-size-md="2" data-size="2">
 					<a href="/" class="header-logo" title="На главную">
 						<img src="images/logo-icon.svg" alt="logo icon" class="header-logo__icon">
 						<img src="images/logo-title.svg" alt="logo title" class="header-logo__title">
 					</a>
 				</div>
-				<div class="row__col header__topline-info" data-size="3">
+				<div class="row__col header__topline-info" data-size-md="2" data-size="3">
 					<div class="header-info">
 						<div class="header-info__col">
 							<div class="info-item header-info__line">Сегодня <span class="info-item__count">+6°</span></div>
@@ -28,12 +28,18 @@
 			<div class="container header__nav-container">
 				<button class="js-toggle-menu header__toggle-nav"></button>
 				<nav class="header-nav header__nav-list">
+					<button class="js-toggle-nav-mobile header-nav__btn">Меню <svg viewBox="0 0 10 6" class="header-nav__arrow"><use xlink:href="images/sprites/sprite.svg#arrow"/></svg></button>
 					<ul class="header-nav__list">
+						<a class="js-header-nav-mobile-close close-modal header-nav__close">
+							<svg viewBox="0 0 24 24" class="close-modal__icon">
+								<use xlink:href="images/sprites/sprite.svg#close"/>
+							</svg>
+						</a>
 						<li class="header-nav__item">
 							<a href="#" class="header-nav__link">Новости</a>
 						</li>
 						<li class="header-nav__item">
-							<a href="#" class="header-nav__link">Актуальные темы </a>
+							<a href="#" class="header-nav__link">Актуальные темы</a>
 						</li>
 						<li class="header-nav__item">
 							<a href="#" class="header-nav__link">Полезное <svg viewBox="0 0 12 6" class="header-nav__arrow"><use xlink:href="images/sprites/sprite.svg#arrow"/></svg></a>
@@ -113,6 +119,11 @@
 	<!-- header-menu BEGIN -->
 	<div class="header-menu header__menu">
 		<div class="header-menu__inner">
+			<a class="js-header-menu-mobile-close close-modal header-menu__close">
+				<svg viewBox="0 0 24 24" class="close-modal__icon">
+					<use xlink:href="images/sprites/sprite.svg#close"/>
+				</svg>
+			</a>
 			<div class="container">
 				<div class="header-menu__row">
 					<div class="header-menu__col">

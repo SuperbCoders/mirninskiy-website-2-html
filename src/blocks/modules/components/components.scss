@@ -1,3 +1,9 @@
+body.is-hidden-sm {
+	@media (max-width: 979px) {
+		overflow: hidden;
+	}
+}
+
 #site {
 	position: relative;
 	overflow: hidden;
@@ -19,6 +25,7 @@
 	}
 }
 
+[data-size-esm],
 [data-size-sm],
 [data-size-md],
 [data-size-lg] {
@@ -33,6 +40,21 @@
 [data-size="2"] {
 	max-width: 40%;
 	flex-basis: 40%;
+}
+
+[data-size="3"] {
+	max-width: 60%;
+	flex-basis: 60%;
+}
+
+[data-size="4"] {
+	max-width: 80%;
+	flex-basis: 80%;
+}
+
+[data-size="5"] {
+	max-width: 100%;
+	flex-basis: 100%;
 }
 
 [data-size="25"] {
@@ -60,70 +82,33 @@
 	flex-basis: 100%;
 }
 
-[data-size="3"] {
-	max-width: 60%;
-	flex-basis: 60%;
-}
-
-[data-size="4"] {
-	max-width: 80%;
-	flex-basis: 80%;
-}
-
-[data-size="5"] {
-	max-width: 100%;
-	flex-basis: 100%;
-}
-
-[data-size-lg="1"] {
-	@extend [data-size="1"];
-}
-
-[data-size-lg="2"] {
-	@extend [data-size="2"];
-}
-
-[data-size-lg="3"] {
-	@extend [data-size="3"];
-}
-
-[data-size-lg="4"] {
-	@extend [data-size="4"];
-}
-
-[data-size-lg="5"] {
-	@extend [data-size="5"];
-}
-
 [data-size-md="1"] {
 	@media (max-width: 1199px) {
-		max-width: 20%;
-		flex-basis: 20%;
+		max-width: 25%;
+		flex-basis: 25%;
+	}
+	& .article--theme_row .article__picture {
+		@media (max-width: 1199px) {
+			display: none;
+		}
 	}
 }
 
 [data-size-md="2"] {
 	@media (max-width: 1199px) {
-		max-width: 27%;
-		flex-basis: 27%;
+		max-width: 50%;
+		flex-basis: 50%;
 	}
 }
 
 [data-size-md="3"] {
 	@media (max-width: 1199px) {
-		max-width: 73%;
-		flex-basis: 73%;
+		max-width: 75%;
+		flex-basis: 75%;
 	}
 }
 
 [data-size-md="4"] {
-	@media (max-width: 1199px) {
-		max-width: 80%;
-		flex-basis: 80%;
-	}
-}
-
-[data-size-md="5"] {
 	@media (max-width: 1199px) {
 		max-width: 100%;
 		flex-basis: 100%;
@@ -131,37 +116,82 @@
 }
 
 [data-size-sm="1"] {
-	@media (max-width: 767px) {
-		max-width: 20%;
-		flex-basis: 20%;
+	@media (max-width: 979px) {
+		max-width: 25%;
+		flex-basis: 25%;
 	}
 }
 
 [data-size-sm="2"] {
-	@media (max-width: 767px) {
-		max-width: 40%;
-		flex-basis: 40%;
+	@media (max-width: 979px) {
+		max-width: 50%;
+		flex-basis: 50%;
 	}
 }
 
-[data-size-sm="31"] {
-	@media (max-width: 767px) {
-		max-width: 60%;
-		flex-basis: 60%;
+[data-size-sm="3"] {
+	@media (max-width: 979px) {
+		max-width: 75%;
+		flex-basis: 75%;
 	}
 }
 
 [data-size-sm="4"] {
-	@media (max-width: 767px) {
-		max-width: 80%;
-		flex-basis: 80%;
+	@media (max-width: 979px) {
+		max-width: 100%;
+		flex-basis: 100%;
 	}
 }
 
-[data-size-sm="5"] {
-	@media (max-width: 767px) {
+[data-size-esm="1"] {
+	@media (max-width: 660px) {
+		max-width: 25%;
+		flex-basis: 25%;
+	}
+}
+
+[data-size-esm="2"] {
+	@media (max-width: 660px) {
+		max-width: 50%;
+		flex-basis: 50%;
+	}
+}
+
+[data-size-esm="3"] {
+	@media (max-width: 660px) {
+		max-width: 75%;
+		flex-basis: 75%;
+	}
+}
+
+[data-size-esm="4"] {
+	@media (max-width: 660px) {
 		max-width: 100%;
 		flex-basis: 100%;
+	}
+}
+
+.hidden-lg {
+	@media (min-width: 1200px) {
+		display: none;
+	}
+}
+
+.hidden-md {
+	@media (max-width: 1199px) {
+		display: none;
+	}
+}
+
+.hidden-sm {
+	@media (max-width: 979px) {
+		display: none;
+	}
+}
+
+.visible-sm {
+	@media (max-width: 979px) {
+		display: block;
 	}
 }
 
@@ -222,9 +252,13 @@
 
 .container {
 	width: 100%;
-	max-width: 1230px;
+	max-width: 1260px;
 	margin: 0 auto;
-	padding: 0 15px;
+	padding: 0 30px;
+	@media (max-width: 979px) {
+		padding-right: 20px;
+		padding-left: 20px;
+	}
 }
 
 .info-item {
@@ -292,6 +326,14 @@
 		color: #fff;
 		&:hover {
 			background: $dark--100;
+		}
+	}
+	&--theme_white {
+		background: #fff;
+		color: $dark--100;
+		&:hover {
+			background: $dark--100;
+			color: #fff;
 		}
 	}
 	&--size_medium {
@@ -719,7 +761,7 @@ a.rubric {
 			background: currentColor;
 			width: 2px;
 			height: 22px;
-			margin: -11px 0 0 -1px;
+			margin: -10px 0 0 -1px;
 			content: '';
 			position: absolute;
 			top: 50%;
@@ -794,7 +836,7 @@ a.rubric {
 		border: 1px solid rgba($dark--100,.12);
 		border-radius: 50%;
 		box-shadow: inset 0 1px 1px rgba(0,0,0,.25);
-		transition: all .1s;
+		transition: all .18s;
 	}
 	&__input:checked ~ &__inner &__icon {
 		border-color: $blue--100;
@@ -1256,7 +1298,7 @@ a.rubric {
 	time {
 		margin: 0 0 6px;
 		display: block;
-		font-weight: 600;
+		font-weight: 500;
 		font-size: 11px;
 		color: $gray--300;
 		text-transform: uppercase;
@@ -1369,8 +1411,8 @@ a.rubric {
 		float: left;
 	}
 	.img-right {
-		margin-right: 30px !important;
-		float: left;
+		margin-left: 30px !important;
+		float: right;
 	}
 }
 
@@ -1480,6 +1522,9 @@ a.rubric {
 		pointer-events: none;
 		position: relative;
 		overflow: hidden;
+		@media (max-width: 1199px) {
+			padding-bottom: 59%;
+		}
 		&:after {
 			background: linear-gradient(180deg, rgba(12, 20, 39, 0) 26.65%, $dark--100 100%);
 			width: 100%;
@@ -1498,9 +1543,6 @@ a.rubric {
 	&--theme_row &__picture {
 		margin: 0 0 0 15px;
 		padding: 0 0 33.9%;
-		@media (max-width: 1200px) {
-			display: none;
-		}
 	}
 	&--theme_row_reverse &__picture {
 		margin: 0 15px 0 0;
@@ -1522,17 +1564,26 @@ a.rubric {
 	}
 	&--theme_main &__title {
 		font-size: 31px;
+		@media (max-width: 660px) {
+			font-size: 24px;
+		}
 	}
 	&--theme_big &__title {
 		margin-top: -6px;
 		font-weight: bold;
 		font-size: 42px;
+		@media (max-width: 660px) {
+			font-size: 28px;
+		}
 	}
 	&--theme_typical &__title {
 		max-width: 390px;
 		margin: 0 auto 10px;
 		font-weight: normal;
 		font-size: 25px;
+		@media (max-width: 660px) {
+			font-size: 24px;
+		}
 	}
 	&__link {
 		@extend .link-hover;
@@ -1624,6 +1675,7 @@ a.rubric {
 
 .subscribe {
 	background: #8ECAEC;
+	overflow: hidden;
 	&--theme_gray {
 		background: #F6F6F6;
 	}
@@ -1632,18 +1684,35 @@ a.rubric {
 	}
 	&__content {
 		padding: 30px 20px 20px 50px;
+		@media (max-width: 1199px) {
+			padding-left: 30px;
+		}
+		@media (max-width: 979px) {
+			padding: 20px;
+			text-align: center;
+		}
 	}
 	&__content-title {
 		margin: 0 0 20px;
 		font-weight: normal;
 		font-size: 26px;
 		font-family: $fonts-accent;
+		@media (max-width: 1199px) {
+			font-size: 23px;
+		}
+		@media (max-width: 979px) {
+			font-size: 21px;
+		}
 	}
 	&__content-description {
 		margin: -10px 0 10px;
 		font-size: 17px;
 	}
 	&__content-btn {
+		@media (max-width: 660px) {
+			width: 100%;
+			max-width: 354px;
+		}
 	}
 	&__picture {
 		width: 100%;
@@ -1655,12 +1724,39 @@ a.rubric {
 		font-size: 0;
 		pointer-events: none;
 		user-select: none;
+		@media (max-width: 1199px) {
+			padding-right: 0;
+			padding-left: 0;
+		}
+		@media (max-width: 979px) {
+			padding: 0 18px;
+		}
 	}
 	&__img {
 		width: 100%;
 		max-width: 362px;
 		margin: 0 auto;
 		display: block;
+	}
+	&__col-content {
+		@media (max-width: 1199px) {
+			max-width: 66%;
+			flex: 0 0 66%
+		}
+		@media (max-width: 979px) {
+			max-width: 100%;
+			flex: 0 0 100%
+		}
+	}
+	&__col-picture {
+		@media (max-width: 1199px) {
+			max-width: 34%;
+			flex: 0 0 34%
+		}
+		@media (max-width: 979px) {
+			max-width: 100%;
+			flex: 0 0 100%
+		}
 	}
 }
 
@@ -1670,6 +1766,9 @@ a.rubric {
 	font-family: $fonts-accent;
 	&__arrow {
 		margin-left: .4em;
+	}
+	@media (max-width: 979px) {
+		font-size: 28px;
 	}
 }
 
@@ -1697,6 +1796,15 @@ a.rubric {
 }
 
 .vote {
+	@media (max-width: 1199px) {
+		background: #FEEBEF;
+		padding: 34px 40px;
+		position: relative;
+	}
+	@media (max-width: 660px) {
+		background: #fff;
+		padding: 0;
+	}
 	&__info {
 	}
 	&__title {
@@ -1706,11 +1814,29 @@ a.rubric {
 		font-family: $fonts-accent;
 	}
 	&__list {
-		margin: 0 0 30px;
+		margin: 0 -10px 30px;
+		display: flex;
+		flex-wrap: wrap;
 	}
 	&__list-line {
 		&:not(:last-child) {
 			margin-bottom: 20px;
+			@media (max-width: 660px) {
+				margin-bottom: 13px;
+			}
+		}
+		@media (max-width: 1199px) {
+			max-width: 33.33%;
+			padding: 0 10px;
+			flex: 0 0 33.33%;
+		}
+		@media (max-width: 979px) {
+			max-width: 50%;
+			flex: 0 0 50%;
+		}
+		@media (max-width: 660px) {
+			max-width: 100%;
+			flex: 0 0 100%;
 		}
 	}
 	&__btn {
@@ -1734,7 +1860,7 @@ a.rubric {
 	&__icon {
 		width: 18px;
 		height: 18px;
-		margin: 1px 10px 0 0;
+		margin: -1px 10px 0 0;
 		flex: 0 0 18px;
 		border: 2px solid rgba(50,50,50,.7);
 		border-radius: 2px;
@@ -1777,6 +1903,9 @@ a.rubric {
 		font-weight: normal;
 		font-size: 19px;
 		font-family: $fonts-accent;
+		@media (max-width: 1199px) {
+			margin-bottom: 10px;
+		}
 	}
 	&__list {
 		margin: 0;
@@ -1829,6 +1958,9 @@ a.rubric {
 	align-items: center;
 	& .slider-arrow:not(:last-child) {
 		margin-right: -1px;
+		@media (max-width: 1199px) {
+			margin-right: 20px;
+		}
 	}
 }
 
@@ -1885,27 +2017,80 @@ a.rubric {
 	color: #fff;
 	text-align: center;
 	position: relative;
+	@media (max-width: 1199px) {
+		padding: 30px 50px;
+		flex-direction: row;
+		justify-content: space-between;
+		text-align: left;
+	}
+	@media (max-width: 660px) {
+		padding: 30px 20px;
+		border-radius: 12px;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: center;
+		text-align: center;
+	}
 	&__icon {
 		width: 26px;
 		height: 26px;
 		margin: 0 auto 20px;
 		display: block;
 		fill: #fff;
+		@media (max-width: 1199px) {
+			width: 40px;
+			height: 40px;
+			margin: -20px 0 0;
+			position: absolute;
+			top: 50%;
+			left: 50px;
+		}
+		@media (max-width: 660px) {
+			width: 26px;
+			height: 26px;
+			margin: 0 auto 20px;
+			position: static;
+		}
+	}
+	&__content {
+		@media (max-width: 1199px) {
+			padding-right: 30px;
+			padding-left: 90px;
+			flex-grow: 1;
+		}
+		@media (max-width: 660px) {
+			padding-right: 0;
+			padding-left: 0;
+		}
 	}
 	&__title {
 		margin: 0 0 10px;
 		font-weight: normal;
 		font-size: 19px;
 		font-family: $fonts-accent;
-		text-align: center;
+		@media (max-width: 1199px) {
+			font-size: 24px;
+		}
 	}
 	&__text {
 		margin: 0 0 20px;
 		font-size: 14px;
 		line-height: 1.4;
+		@media (max-width: 1199px) {
+			max-width: 400px;
+			margin: 0;
+			font-size: 17px;
+		}
+		@media (max-width: 660px) {
+			margin: 0 0 10px;
+		}
 	}
 	&__btn {
 		width: 100%;
+		@media (max-width: 1199px) {
+			width: auto;
+			flex-shrink: 0;
+		}
 	}
 }
 
@@ -1922,9 +2107,23 @@ a.rubric {
 	outline: none;
 	transition: all .4s;
 	cursor: pointer;
-	&:hover {
-		color: $blue--100;
-		text-decoration: none;
+	@media (min-width: 980px) {
+		&:hover {
+			color: $blue--100;
+			text-decoration: none;
+		}
+	}
+	@media (max-width: 979px) {
+		background: $gray--100;
+		height: auto;
+		padding: 20px 30px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		position: static;
+		@media (max-width: 660px) {
+			padding: 15px 20px;
+		}
 	}
 	&__icon {
 		width: 24px;
@@ -1933,6 +2132,10 @@ a.rubric {
 		fill: currentColor;
 		pointer-events: none;
 		vertical-align: middle;
+		@media (max-width: 660px) {
+			width: 16px;
+			height: 16px;
+		}
 	}
 }
 
@@ -2015,12 +2218,19 @@ a.rubric {
 		height: 100%;
 		padding: 60px;
 		overflow-y: auto;
+		@media (max-width: 979px) {
+			padding: 25px 20px;
+		}
 	}
 	&__close {
 		position: absolute;
 		top: 40px;
 		right: 40px;
 		z-index: 1;
+		@media (max-width: 979px) {
+			width: calc(100% + 40px);
+			margin: -25px -20px 25px;
+		}
 	}
 	&__inner {
 		width: 100%;
@@ -2184,10 +2394,15 @@ a.rubric {
 		display: block;
 		font-size: 18px;
 		font-family: $fonts-accent;
+		white-space: nowrap;
 		transition: all .4s;
 		&:hover {
 			color: $blue--100;
 			text-decoration: none;
+		}
+		@media (max-width: 979px) {
+			padding-right: 20px;
+			padding-left: 20px;
 		}
 	}
 }
@@ -2272,16 +2487,31 @@ a.rubric {
 		background: rgba(255,255,255,.95);
 		padding: 25px 0;
 		position: relative;
+		@media (max-width: 979px) {
+			background: #fff;
+		}
 	}
 	&__row {
 		margin: 0 -15px;
 		display: flex;
 		flex-wrap: wrap;
+		@media (max-width: 660px) {
+			margin: 0 -8px;
+		}
 	}
 	&__col {
 		max-width: 25%;
 		padding: 0 15px;
 		flex: 0 0 25%;
+		@media (max-width: 979px) {
+			max-width: 50%;
+			flex-basis: 50%;
+		}
+		@media (max-width: 660px) {
+			max-width: 100%;
+			flex-basis: 100%;
+			padding: 0 8px;
+		}
 	}
 	&__title {
 		margin: 0 0 20px;
@@ -2291,9 +2521,21 @@ a.rubric {
 	}
 	&__nav {
 		margin: 0 0 20px;
+		@media (max-width: 979px) {
+			margin-bottom: 20px;
+		}
 	}
 	&__social {
 		margin: 0 0 20px;
+	}
+	&__close {
+		@media (min-width: 980px) {
+			display: none;
+		}
+		@media (max-width: 979px) {
+			width: 100%;
+			margin: -25px 0 25px;
+		}
 	}
 }
 
@@ -2308,18 +2550,12 @@ a.rubric {
 	&__container {
 	}
 	&__row {
+		margin: 0 -15px;
 		padding: 10px 0;
 	}
 	&__col {
-		max-width: 25%;
-		flex: 0 0 25%;
-		@media (max-width: 1200px) {
-			max-width: 33.33%;
-			flex-basis: 33.33%;
-			&:nth-child(4) {
-				display: none;
-			}
-		}
+		padding: 0 15px;
+		vertical-align: top;
 	}
 }
 
@@ -2393,9 +2629,20 @@ a.rubric {
 	}
 	&__rubric-nav {
 		margin: 20px 0;
+		@media (max-width: 1199px) {
+			margin-right: -30px;
+			margin-left: -30px;
+		}
+		@media (max-width: 979px) {
+			overflow-x: auto;
+		}
 	}
 	&__vote {
 		margin: 10px 0 20px;
+		@media (max-width: 660px) {
+			padding-top: 20px;
+			border-top: 1px solid $gray--200;
+		}
 	}
 	&__title {
 		margin-bottom: 10px;
@@ -2407,6 +2654,10 @@ a.rubric {
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
+		@media (max-width: 1199px) {
+			margin: 0;
+			min-height: 0;
+		}
 	}
 	&__control {
 		padding-top: 10px;
@@ -2443,6 +2694,11 @@ a.rubric {
 	&__m-medop {
 		margin-bottom: 30px;
 	}
+	&__col-instagram {
+		@media (max-width: 1199px) {
+			order: 2;
+		}
+	}
 }
 
 .slider-news {
@@ -2457,6 +2713,15 @@ a.rubric {
 	display: block;
 	position: relative;
 	z-index: 1;
+	@media (max-width: 1199px) {
+		width: 246px;
+	}
+	@media (max-width: 979px) {
+		width: 200px;
+	}
+	@media (max-width: 660px) {
+		width: 160px;
+	}
 	&__header {
 		margin: 0 0 10px;
 		padding-bottom: 109.26%;
@@ -2471,6 +2736,12 @@ a.rubric {
 		font-size: 19px;
 		font-family: $fonts-accent;
 		text-align: center;
+		@media (max-width: 1199px) {
+			font-size: 18px;
+		}
+		@media (max-width: 660px) {
+			font-size: 16px;
+		}
 	}
 	&__link {
 		@extend .link-hover;

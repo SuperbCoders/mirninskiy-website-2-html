@@ -14,8 +14,10 @@ body {
 }
 
 body.is-hidden {
-	padding-right: 17px;
 	overflow: hidden;
+	@media (min-width: 1200px) {
+		padding-right: 17px;
+	}
 }
 
 a {

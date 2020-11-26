@@ -4,7 +4,8 @@
 	font-size: 0;
 	user-select: none;
 	outline: none;
-	transition: all .4s;
+	transition: all .18s;
+	vertical-align: top;
 	&:hover {
 		text-decoration: none;
 		opacity: .6;
@@ -13,9 +14,17 @@
 		width: 40px;
 		margin-right: 10px;
 		flex-shrink: 0;
+		@media (max-width: 660px) {
+			width: 24px;
+			margin-right: 0;
+		}
 	}
 	&__title {
+		max-width: calc(100% - 50px);
 		margin-top: -3px;
+		@media (max-width: 660px) {
+			display: none;
+		}
 	}
 }
 
@@ -24,15 +33,18 @@
 	display: flex;
 	justify-content: flex-end;
 	flex-wrap: wrap;
+	@media (max-width: 979px) {
+		display: none;
+	}
 	&__col {
-		padding: 3px 30px;
+		padding: 2px 30px;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		border-right: 1px solid #F6F6F6;
 	}
 	&__line {
-		margin: 3px 0;
+		margin: 2px 0;
 	}
 }
 
@@ -44,12 +56,57 @@
 		display: flex;
 		justify-content: center;
 		list-style-type: none;
+		z-index: 2;
+		@media (max-width: 979px) {
+			background: #fff;
+			width: 100%;
+			padding: 25px 0;
+			align-items: flex-start;
+			flex-wrap: wrap;
+			position: fixed;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			transition: all .18s;
+			transition-property: opacity, visibility, transform;
+			overflow-x: hidden;
+			overflow-y: auto;
+			&:not(.is-show) {
+				transform: translateY(-100%);
+				pointer-events: none;
+				opacity: 0;
+				visibility: hidden;
+			}
+		}
+	}
+	&__close {
+		@media (min-width: 980px) {
+			display: none;
+		}
+		@media (max-width: 979px) {
+			background: $gray--100;
+			width: 100%;
+			height: auto;
+			margin: -25px 0 25px;
+			padding: 20px 30px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			position: static;
+			z-index: 1;
+		}
 	}
 	&__item {
 		height: 100%;
 		margin: 0;
 		padding: 0;
 		position: relative;
+		@media (max-width: 979px) {
+			max-width: 50%;
+			height: auto;
+			margin-bottom: 20px;
+			flex: 0 0 50%;
+		}
 	}
 	&__link {
 		height: 100%;
@@ -58,6 +115,12 @@
 		align-items: center;
 		color: inherit;
 		transition: all .2s;
+		@media (max-width: 979px) {
+			padding: 5px 20px;
+			font-weight: bold;
+			font-size: 19px;
+			font-family: "Times New Roman", Georgia, Arial, serif;
+		}
 		&:hover {
 			color: $blue--100;
 			text-decoration: none;
@@ -73,8 +136,13 @@
 		margin: 0 0 0 .4em;
 		display: inline-block;
 		fill: currentColor;
-		transition: transform .4s;
+		transition: transform .18s;
 		vertical-align: middle;
+	}
+	&__link &__arrow{
+		@media (max-width: 979px) {
+			display: none;
+		}
 	}
 	&__link:hover &__arrow,
 	&__item:hover &__arrow {
@@ -92,11 +160,45 @@
 		transition: all .2s;
 		transition-property: opacity, visibility;
 		z-index: 101;
+		@media (max-width: 979px) {
+			background: transparent;
+			border: none;
+			box-shadow: none;
+			transform: none;
+			position: static;
+		}
 	}
 	&__item:not(:hover) .header-dropdown {
-		pointer-events: none;
-		opacity: 0;
-		visibility: hidden;
+		@media (min-width: 980px) {
+			pointer-events: none;
+			opacity: 0;
+			visibility: hidden;
+		}
+	}
+	&__btn {
+		@media (min-width: 980px) {
+			display: none;
+		}
+		@media (max-width: 979px) {
+			background: transparent;
+			height: 100%;
+			padding: 0 25px;
+			display: inline-flex;
+			align-items: center;
+			color: $blue--100;
+			border: none;
+			outline: none;
+			transition: all .18s;
+			svg {
+				width: 10px;
+				height: 6px;
+				margin-left: 6px;
+				flex-shrink: 0;
+			}
+			&.is-active svg {
+				transform: rotate(-180deg);
+			}
+		}
 	}
 }
 
@@ -111,7 +213,11 @@
 	&__link {
 		padding: 7px 13px;
 		display: block;
-		transition: all .4s;
+		transition: all .18s;
+		@media (max-width: 979px) {
+			padding: 7px 20px;
+			font-size: 14px;
+		}
 		&:hover{
 			background: $gray--100;
 			text-decoration: none;
@@ -129,6 +235,9 @@
 	&__topline {
 		padding: 25px 0;
 		align-items: center;
+		@media (max-width: 660px) {
+			padding: 15px 0;
+		}
 	}
 	&__topline-logo {
 	}
@@ -160,7 +269,7 @@
 		border: none;
 		position: relative;
 		cursor: pointer;
-		transition: all .4s;
+		transition: all .18s;
 		outline: none;
 		&:hover {
 			color: $blue--100;
@@ -188,6 +297,11 @@
 	}
 	&__nav-list {
 		flex-grow: 1;
+		@media (max-width: 979px) {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
 	}
 	&__search-toggle {
 		background: transparent;
@@ -195,7 +309,7 @@
 		color: $dark--100;
 		text-align: center;
 		border: none;
-		transition: all .4s;
+		transition: all .18s;
 		outline: none;
 		cursor: pointer;
 		position: relative;
@@ -219,7 +333,7 @@
 			right: -12px;
 			bottom: 0;
 			left: -12px;
-			transition: all .4s;
+			transition: all .18s;
 		}
 		&:after {
 			width: 0;
@@ -235,12 +349,24 @@
 		top: 100%;
 		left: 0;
 		z-index: 99;
-		transition: all .1s;
+		transition: all .18s;
 		transition-property: transform, opacity, visibility;
+		@media (max-width: 979px) {
+			position: fixed;
+			top: 0;
+			bottom: 0;
+			overflow-x: hidden;
+			overflow-y: auto;
+			z-index: 100;
+		}
 		&:not(.is-show) {
 			pointer-events: none;
 			opacity: 0;
 			visibility: hidden;
+			@media (max-width: 979px) {
+				background: #fff;
+				transform: translateY(-100%);
+			}
 		}
 		&:before {
 			background: rgba($dark--100,.7);
@@ -267,6 +393,10 @@
 			pointer-events: none;
 			opacity: 0;
 			visibility: hidden;
+			@media (max-width: 979px) {
+				transition-property: opacity, visibility, transform;
+				transform: translateY(-100%);
+			}
 		}
 	}
 	&__search:not(.is-show) .search__result {
@@ -288,7 +418,7 @@
 		padding: 0;
 	}
 	&__link {
-		transition: all .4s;
+		transition: all .18s;
 		&:hover {
 			color: $blue--100;
 			text-decoration: none;
@@ -297,6 +427,11 @@
 }
 
 .header-menu-title-link {
+	@media (max-width: 979px) {
+		padding: 5px 0;
+		display: inline-block;
+		vertical-align: top;
+	}
 	@extend .link-hover;
 	&:hover {
 		color: $blue--100;
@@ -308,12 +443,16 @@
 	margin: 0;
 	padding: 0;
 	list-style-type: none;
+	@media (max-width: 660px) {
+		column-count: 2;
+		column-gap: 20px;
+	}
 	&__item {
 		margin: 0 0 10px;
 		padding: 0;
 	}
 	&__link {
-		transition: all .4s;
+		transition: all .18s;
 		&:hover {
 			color: $blue--100;
 			text-decoration: none;
@@ -327,6 +466,9 @@
 	background: #8ECAEC;
 	&__content {
 		padding: 24px 30px 45px;
+		@media (max-width: 660px) {
+			padding: 24px 20px 45px;
+		}
 	}
 	&__title {
 		margin: 0 0 10px;
@@ -348,5 +490,8 @@
 		width: 100%;
 		height: auto;
 		display: block;
+	}
+	@media (max-width: 660px) {
+		margin: 0 -20px -25px;
 	}
 }

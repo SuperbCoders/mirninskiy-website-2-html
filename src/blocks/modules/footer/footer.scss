@@ -2,6 +2,10 @@
 	background: #0C1427;
 	padding: 40px 0;
 	color: #fff;
+	@media (max-width: 1199px) {
+		padding-right: 20px;
+		padding-left: 20px;
+	}
 	&__container {
 	}
 	&__title {
@@ -11,19 +15,47 @@
 		font-family: $fonts-accent;
 	}
 	&__nav {
+		@media (max-width: 660px) {
+			margin-bottom: 30px;
+		}
 	}
 	&__social {
+		@media (max-width: 1199px) {
+			margin-top: 30px;
+			display: flex;
+			flex-direction: row-reverse;
+			align-items: center;
+			justify-content: space-between;
+		}
+		@media (max-width: 660px) {
+			flex-direction: row;
+			align-items: flex-start;
+			justify-content: flex-start;
+			flex-wrap: wrap;
+		}
+	}
+	&__social-list {
+		@media (max-width: 1199px) {
+			padding-right: 30px;
+		}
 	}
 	&__copyright {
-		margin-top: 40px;
+		margin-top: 20px;
 		padding-top: 20px;
 		font-size: 14px;
 		border-top: 1px solid rgba(255,255,255,.5);
+		@media (max-width: 1199px) {
+			margin-top: 20px;
+			padding-top: 30px;
+		}
 	}
 	&__copyright-date {
 		margin: 0 0 8px;
 		font-size: 15px;
 		font-family: $fonts-accent;
+		@media (max-width: 660px) {
+			font-size: 19px;
+		}
 	}
 	&__copyright-description {
 		max-width: 540px;
@@ -36,6 +68,19 @@
 	&__subscribe {
 		width: 100%;
 		margin: 0 0 30px;
+		@media (max-width: 1199px) {
+			width: auto;
+			min-width: calc(25% - 15px);
+			margin: -30px 0 0;
+			flex-shrink: 0;
+		}
+		@media (max-width: 979px) {
+			min-width: calc(50% - 10px);
+		}
+		@media (max-width: 660px) {
+			width: 100%;
+			margin-bottom: 20px;
+		}
 	}
 }
 
@@ -43,9 +88,19 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	@media (max-width: 660px) {
+		align-items: flex-start;
+		flex-wrap: wrap;
+	}
 	&__text {
 		line-height: 1.4;
 		text-align: right;
+		@media (max-width: 660px) {
+			max-width: 100%;
+			margin: 20px 0;
+			flex: 0 0 100%;;
+			text-align: left;
+		}
 		a {
 			transition: all .4s;
 			@extend .link-hover;
@@ -57,8 +112,12 @@
 	&__logo {
 		max-width: 35px;
 		height: auto;
-		margin: 0 0 0 30px;
+		margin: 0 0 0 10px;
 		flex: 0 0 35px;
+		@media (max-width: 660px) {
+			margin: 0 auto;
+			display: table;
+		}
 	}
 }
 
@@ -67,11 +126,8 @@
 	padding: 0;
 	list-style-type: none;
 	&__item {
-		margin: 0;
+		margin: 0 0 15px;
 		padding: 0;
-		&:not(:last-child) {
-			margin-bottom: 16px;
-		}
 	}
 	&__link {
 		box-shadow: 0 1px 0 currentColor;
