@@ -2146,9 +2146,12 @@ a.rubric {
 		font-family: $fonts-accent;
 	}
 	&__list {
-		margin: 0 -10px 30px;
-		display: flex;
-		flex-wrap: wrap;
+		margin: 0 0 30px;
+		@media (max-width: 1199px) {
+			margin: 0 -10px 30px;
+			display: flex;
+			flex-wrap: wrap;
+		}
 	}
 	&__list-line {
 		&:not(:last-child) {
