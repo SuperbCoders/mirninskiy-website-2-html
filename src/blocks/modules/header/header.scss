@@ -287,14 +287,18 @@
 
 		}
 		&:after {
-			background: currentColor;
+			background: $dark--100;
 			width: 100%;
 			height: 1px;
 			margin-top: -1px;
 			content: '';
-			color: inherit;
 			display: block;
-			box-shadow: 0 -6px 0 currentColor, 0 6px 0 currentColor;
+			box-shadow: 0 -6px 0 $dark--100, 0 6px 0 $dark--100;
+		}
+		&:hover:after,
+		&.is-active:after {
+			background: $blue--100;
+			box-shadow: 0 -6px 0 $blue--100, 0 6px 0 $blue--100;
 		}
 	}
 	&__nav-list {
