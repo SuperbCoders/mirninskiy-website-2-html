@@ -29,8 +29,59 @@
 	}
 }
 
+.header-user {
+	display: flex;
+	align-items: center;
+	&__avatar {
+		background: $blue--100;
+		width: 40px;
+		height: 40px;
+		margin-right: 12px;
+		flex: 0 0 40px;
+		font-weight: 500;
+		font-size: 22px;
+		line-height: 46px;
+		color: #fff;
+		text-align: center;
+		text-transform: uppercase;
+		border-radius: 50%;
+		user-select: none;
+		transition: all .4s;
+		@media (max-width: 979px) {
+			margin-right: 0;
+		}
+		&:hover {
+			text-decoration: none;
+			opacity: .6;
+		}
+	}
+	&__text {
+		padding-top: 2px;
+		font-size: 16px;
+		line-height: 1;
+		text-align: left;
+		@media (max-width: 979px) {
+			display: none;
+		}
+	}
+	&__name {
+		max-width: 100px;
+		margin: 0 0 3px;
+		text-overflow: ellipses;
+		white-space: normal;
+		overflow: hidden;
+	}
+	&__logout {
+		line-height: 1;
+		color: $blue--100;
+		@extend .link-hover;
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}
+
 .header-info {
-	width: 100%;
 	display: flex;
 	justify-content: flex-end;
 	flex-wrap: wrap;
@@ -43,6 +94,9 @@
 		flex-direction: column;
 		justify-content: center;
 		border-right: 1px solid #F6F6F6;
+		&:first-child {
+			border-left: 1px solid #F6F6F6;
+		}
 	}
 	&__line {
 		margin: 2px 0;
@@ -242,6 +296,13 @@
 	}
 	&__topline-logo {
 	}
+	&__user {
+		margin-right: 30px;
+		flex-shrink: 0;
+		@media (max-width: 979px) {
+			margin-right: 0;
+		}
+	}
 	&__topline-info {
 		display: flex;
 		justify-content: flex-end;
@@ -251,6 +312,9 @@
 	&__topline-subscribe {
 		margin-left: 30px;
 		flex-shrink: 0;
+		@media (max-width: 979px) {
+			margin-left: 20px;
+		}
 	}
 	&__nav {
 		border: solid $gray--200;
@@ -288,7 +352,7 @@
 		}
 		&:after {
 			background: $dark--100;
-			width: 100%;
+			width: inherit;
 			height: 1px;
 			margin-top: -1px;
 			content: '';
