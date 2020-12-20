@@ -39,6 +39,10 @@ $(document).ready(function() {
 	});
 
 
+	// trigger modal
+	$('.js-modal-trigger').trigger('click');
+
+
 	// init select2
 	if ($('.js-select-init').length){
 		$('.js-select-init').select2({

@@ -1024,11 +1024,28 @@
 <!-- footer END -->
 
 <a href="#modal-login" class="js-modal-init">Вход</a>
-<br><br><a href="#modal-register" class="js-modal-init">Регистрация</a>
+<br><br><a href="#modal-register" class="js-modal-init js-modal-trigger">Регистрация</a>
 <br><br><a href="#modal-subscribe-1" class="js-modal-init">Подписка шаг 1</a>
 <br><br><a href="#modal-subscribe-2" class="js-modal-init">Подписка шаг 2</a>
 <br><br><a href="#modal-announcement-1" class="js-modal-announcement">Подать объявление 1</a>
 <br><br><a href="#modal-announcement-2" class="js-modal-announcement">Подать объявление 2</a>
+
+<!-- modal announcement step 2 -->
+<div id="modal-announcement-2" class="m-modal m-modal--size_fixed m-modal--position_right">
+	<a href="#close-modal" class="close-modal m-modal__close" rel="modal:close">
+		<svg viewBox="0 0 24 24" class="close-modal__icon">
+			<use xlink:href="images/sprites/sprite.svg#close"/>
+		</svg>
+	</a>
+	<div class="m-modal-thanks">
+		<svg viewBox="0 0 100 100" class="m-modal-thanks__icon">
+			<use xlink:href="images/sprites/sprite.svg#okey"/>
+		</svg>
+		<div class="m-modal-thanks__title">Поздравляем, Вы успешно добавили объявление!</div>
+		<div class="m-modal-thanks__text">Теперь вы сможете просматривать свои объявления в разделе «Мои посты»</div>
+		<a href="#modal-announcement-1" class="js-modal-announcement m-modal-thanks__new-announcement">Написать еще объявление</a>
+	</div>
+</div>
 
 <br><br>
 
